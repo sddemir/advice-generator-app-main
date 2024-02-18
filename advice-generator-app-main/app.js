@@ -1,6 +1,13 @@
-// import axios from './axios';
 const dice=document.querySelector('#dice');
-dice.addEventListener('click', async function (){
-    const result = await axios.get('https://api.adviceslip.com/advice');
-    console.log(result.data[0].slip.advice);
-})
+console.log('anan');
+const getAdvice = () => {
+    axios.get('https://api.adviceslip.com/advice')
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.error('Error fetching advice:', error);
+        });
+}
+
+dice.addEventListener('click', getAdvice);
