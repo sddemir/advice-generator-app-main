@@ -1,4 +1,5 @@
 const dice=document.querySelector('#dice');
+const qAdvice=document.querySelector('#query');
 console.log('anan');
 // const getAdvice = () => {
 //     for(let i=0; i<100; i++) {
