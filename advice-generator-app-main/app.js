@@ -30,6 +30,7 @@ qAdvice.addEventListener('keypress', async function(e){
             const queryAdvice = qAdvice.value;
             const res = await axios.get(`https://api.adviceslip.com/advice/search/${queryAdvice}`);
             console.log(res.data);
+            qAdvice.value="";
             paragraf.innerText= res.data.slips[0].advice;
         }
     } 
