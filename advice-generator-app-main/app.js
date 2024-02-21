@@ -1,6 +1,7 @@
 const dice=document.querySelector('#dice');
 const qAdvice=document.querySelector('#query');
 const paragraf=document.getElementById('advice');
+const ID = document.querySelector('#adviceID');
 console.log('anan');
 // const getAdvice = () => {
 //     for(let i=0; i<100; i++) {
@@ -16,6 +17,7 @@ console.log('anan');
 dice.addEventListener('click', async function getAdvice(){
     try {
         const slip_id = Math.floor(Math.random() * 200) + 1;
+        ID.innerText = slip_id;
         const response = await axios.get(`https://api.adviceslip.com/advice/${slip_id}`);
         console.log(response.data); 
         paragraf.innerText = response.data.slip.advice;
